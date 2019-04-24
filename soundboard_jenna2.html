@@ -1,0 +1,138 @@
+<!dogtype>
+<head>
+    <title>Soundboard</title>
+    <meta charset="utf-8" />
+    <style>
+
+        .button {
+        background-color: rgb(0, 0, 0); 
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+        cursor: pointer;
+        }
+
+        .button1 {
+        background-color: white; 
+        color: black; 
+        border: 2px solid rgb(3, 3, 3);
+        }
+
+        .button1:hover {
+        background-color: #555555;
+        color: white;
+        }
+
+        h1{
+        text-align: center;
+        }
+
+        h2{
+        text-align: center;
+        }
+        
+        body {
+            background: #ffffff url("kasvi.jpg") no-repeat right top;
+        }
+        #boksi {
+            
+            border-radius: 25px;
+            width: 23vw;
+            height: 10vw;  
+            background-color: rgb(48, 70, 48);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+        }
+        #boksi2 {
+            border-radius: 25px;
+            width: 23vw; 
+            height:10vw; 
+            background: rgb(75, 235, 75);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block; /*laittaa palikan toisen viereen*/
+        }
+        #boksi3 {
+            border-radius: 25px;
+            width: 23vw; 
+            height:10vw; 
+            background: green;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+        }
+        #boksi4 {
+            border-radius: 25px;
+            width: 23vw; 
+            height:10vw; 
+            background: lightgreen;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+        }
+        div {
+            width: 320px;
+            padding: 5px;
+            border: 2px solid rgb(22, 66, 25);
+            margin: 0; 
+        }
+    </style>
+    
+
+</head>
+<!--button onclick="boksi()">Soita biisi1 ja biisi2 </button>-->
+<body>
+        
+   
+        <script type="text/javascript">
+
+            let nimi = prompt("Ole hyvä ja anna etunimesi", "Kirjoita nimesi tähän");
+            
+            document.write("Tervetuloa sivuille " + nimi + "!");
+
+        </script>
+    <br></br>
+    <br><button type= "button" onclick="myFunction()">Klikkaa ensin tästä!</button></br>
+
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+    function myFunction() {
+    document.getElementById("demo1").innerHTML = "Hienoa " + nimi + " että löysit tämän sivun!";
+    document.getElementById("demo2").innerHTML = "Mitä kuuluu?";
+    }
+    
+    </script>
+
+    <h1 style="color: rgb(7, 75, 10);">Täällä voit kuunnella biisejä tästä hienosta soundboardista</h1>
+    <br><h2>Klikkaa neliöitä soittaaksesi musiikkia!</h2></br>
+
+    <div id="boksi" onclick="toista('https://www.youtube.com/audiolibrary_download?vid=d3595909d2a8bd9f')"></div> 
+    <div id="boksi2" onclick="toista('https://www.youtube.com/audiolibrary_download?vid=5a6b9af98008542d')"></div>
+    <div id="boksi3" onclick="toista('https://www.youtube.com/audiolibrary_download?vid=e2a9395d40bde3f5')"></div>
+    <div id="boksi4" onclick="toista('https://www.youtube.com/audiolibrary_download?vid=e7dbda84fb977002')"></div>
+    <br /> <button class="button button1" onclick="pause()">Pause</button><br /> 
+
+    
+    <script>
+        let audioTiedosto = new Audio(); //audioTiedosto = objekti
+        function toista(url) {
+             audioTiedosto.src= url //audioTiedostolle vaihdetaan src/sourcella urlia
+                audioTiedosto.play() ;
+            }              
+        function pause() {
+            audioTiedosto.pause();
+             
+    
+        }
+
+
+    </script>
+    
+    
+</body>
